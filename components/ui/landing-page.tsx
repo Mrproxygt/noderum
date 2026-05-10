@@ -12,6 +12,7 @@ import { NoderumHero } from "@/components/ui/background-paths"
 import { LogoMarquee } from "@/components/ui/logo-marquee"
 import { LiveCall } from "@/components/ui/live-call"
 import { CollabifyDemo } from "@/components/ui/collabify-demo"
+import { ProblemOrbital } from "@/components/ui/problem-orbital"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -36,14 +37,6 @@ function SectionLabel({ num, text }: { num: string; text: string }) {
   )
 }
 
-const problems = [
-  { icon: <Zap className="h-5 w-5" />, text: "Hundratals plattformar lovar allt och levererar ingenting konkret för svenska SMB." },
-  { icon: <Building2 className="h-5 w-5" />, text: "De flesta AI-produkter byggs av tekniker för tekniker — de ignorerar hantverkare och säljare." },
-  { icon: <Globe className="h-5 w-5" />, text: "Generiska verktyg som inte talar deras språk, inte förstår deras bransch." },
-  { icon: <BarChart3 className="h-5 w-5" />, text: "Valet: anställ dyr personal, eller tappa kunder, leads och intäkter varje vecka." },
-  { icon: <Sparkles className="h-5 w-5" />, text: "Existerande lösningar är amerikanska, översatta, och byggda för en annan marknad." },
-  { icon: <Phone className="h-5 w-5" />, text: "De missar vad svenska företag faktiskt behöver från ett dagligt arbetsverktyg." },
-]
 
 export function NoderumLanding() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -142,160 +135,173 @@ export function NoderumLanding() {
         <LogoMarquee />
 
         {/* ── Section 01: Problem ── */}
-        <section id="manifesto" className="py-24 md:py-32">
-          <div className="max-w-6xl mx-auto px-6">
-
+        <section id="manifesto">
+          {/* Header — above the scroll-driven orbital */}
+          <div className="max-w-6xl mx-auto px-6 pt-14 md:pt-20 pb-4">
             <motion.div
               initial="hidden" whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={fadeUp}
-              className="max-w-2xl mb-16"
+              className="max-w-2xl"
             >
               <SectionLabel num="01" text="Problemet" />
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-5">
                 Bygg med övertygelse
               </h2>
               <p className="text-neutral-500 dark:text-white/50 text-base md:text-lg leading-relaxed">
-                Noderums portfölj av AI-bolag löser konkreta affärsproblem för svenska företag — inte abstrakta visioner om framtiden.
+                Svenska företag drunknar i AI-verktyg som inte är byggda för dem.
               </p>
               <p className="text-neutral-400 dark:text-white/40 text-sm md:text-base leading-relaxed mt-3">
-                Det här är AI-landskapet idag.
+                Scrolla för att utforska problemet.
               </p>
             </motion.div>
-
-            <motion.div
-              variants={stagger} initial="hidden"
-              whileInView="visible" viewport={{ once: true, margin: "-60px" }}
-              className="grid gap-3 md:grid-cols-2 lg:grid-cols-3"
-            >
-              {problems.map((p, i) => (
-                <motion.div
-                  key={i} variants={item}
-                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                  className="group relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-white/[0.06] bg-neutral-50 dark:bg-white/[0.02] p-6 hover:border-orange-200 dark:hover:border-orange-500/25 hover:bg-orange-50/50 dark:hover:bg-orange-500/[0.03] transition-all duration-300"
-                >
-                  <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-orange-500/5 group-hover:bg-orange-500/10 transition-colors duration-500" />
-                  <div className="relative">
-                    <div className="mb-4 text-orange-500/70 dark:text-orange-500/60 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
-                      {p.icon}
-                    </div>
-                    <p className="text-neutral-500 dark:text-white/50 text-sm leading-relaxed group-hover:text-neutral-700 dark:group-hover:text-white/70 transition-colors">
-                      {p.text}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
           </div>
+
+          {/* Orbital — scroll-driven */}
+          <ProblemOrbital />
         </section>
 
         {/* ── Section 02: Solution ── */}
         <section id="companies" className="py-24 md:py-32 border-t border-neutral-100 dark:border-white/[0.04]">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
+            {/* Header row */}
+            <div className="grid lg:grid-cols-2 gap-6 mb-14">
               <motion.div
-                initial={{ opacity: 0, x: -32 }} whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }} viewport={{ once: true }}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }} viewport={{ once: true }}
               >
                 <SectionLabel num="02" text="Lösningen" />
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-6">
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white leading-[1.07]">
                   Tänd ljuset
                 </h2>
-                <div className="space-y-4 text-neutral-500 dark:text-white/50 text-sm md:text-base leading-relaxed mb-8">
-                  <p>Noderum är studion bakom flera operativa AI-bolag — var och ett byggt för en specifik bransch, ett specifikt problem, en specifik kund.</p>
-                  <p>Vi grundar bolagen, bygger produkterna, anställer teamen, och driver dem till lönsamhet — istället för att jaga den nästa hypecykeln.</p>
-                  <p>Varje bolag löser ett konkret problem med en konkret intäktsmodell. Inga vaporware. Bara fungerande affärer.</p>
-                </div>
-                <div className="space-y-2">
-                  {[
-                    { label: "Branschspecifika AI-bolag", desc: "Byggda bottom-up för en bransch, inte top-down från en generell plattform." },
-                    { label: "Konkreta intäktsmodeller", desc: "MRR från dag ett. Ingen VC-driven tillväxt utan fondament." },
-                    { label: "Operativ expertis", desc: "Vi driver bolagen, vi sitter inte på styrelseplatser." },
-                    { label: "Svenska SMB i fokus", desc: "Verktyg på svenska, för svenska arbetsflöden." },
-                  ].map((point, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: i * 0.08 }} viewport={{ once: true }}
-                      whileHover={{ x: 6 }}
-                      className="group flex gap-4 rounded-2xl border border-neutral-200 dark:border-white/[0.06] bg-neutral-50 dark:bg-white/[0.02] px-5 py-4 hover:border-orange-200 dark:hover:border-orange-500/25 hover:bg-orange-50/50 dark:hover:bg-orange-500/[0.03] transition-all duration-300 cursor-default"
-                    >
-                      <div className="mt-0.5 h-1.5 w-1.5 rounded-full bg-orange-500 flex-shrink-0 group-hover:shadow-[0_0_8px] group-hover:shadow-orange-500 transition-shadow" />
-                      <div>
-                        <div className="font-semibold text-sm text-neutral-700 dark:text-white/80 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors">{point.label}</div>
-                        <div className="text-xs text-neutral-400 dark:text-white/35 mt-0.5 leading-relaxed">{point.desc}</div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
               </motion.div>
-
-              {/* Image */}
               <motion.div
-                initial={{ opacity: 0, x: 32 }} whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }} viewport={{ once: true }}
-                className="relative"
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }} viewport={{ once: true }}
+                className="text-neutral-400 dark:text-white/35 text-sm md:text-base leading-relaxed lg:pt-14 space-y-4"
               >
-                <div className="relative overflow-hidden rounded-3xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80"
-                    alt="Modern workspace"
-                    className="w-full h-[300px] md:h-[520px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                </div>
-                {/* Floating stat */}
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}
-                  className="absolute bottom-4 left-4 md:-bottom-5 md:-left-5 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-white/[0.08] shadow-xl px-6 py-4"
+                <p>Vi bygger inte plattformar. Vi bygger bolag. Noderum grundar och driver operativa AI-företag — var och ett byggt för en specifik bransch, ett specifikt problem, en specifik kund.</p>
+                <p>Vi äger dem. Vi driver dem. Vi anställer teamet, bygger produkten och tar in de första kunderna — själva.</p>
+                <p>Inga konsulter. Inga underleverantörer. Bara operativa bolag som löser riktiga problem för svenska SMB.</p>
+              </motion.div>
+            </div>
+
+            {/* Body: image left + features right */}
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 mb-6">
+
+              {/* Left: typography block */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }} viewport={{ once: true }}
+                className="relative overflow-hidden rounded-3xl"
+                style={{ minHeight: 400 }}
+              >
+                <div
+                  className="w-full h-full bg-neutral-950 flex items-center justify-center px-10 py-16"
+                  style={{ minHeight: 400 }}
                 >
-                  <div className="text-2xl font-bold text-neutral-900 dark:text-white">48h</div>
-                  <div className="text-xs text-neutral-400 dark:text-white/40 mt-0.5">Från lead till lansering</div>
+                  <p
+                    className="text-orange-500 font-bold leading-tight text-center"
+                    style={{ fontSize: "clamp(2.5rem, 5vw, 4.25rem)", letterSpacing: "-0.03em" }}
+                  >
+                    Inga features.<br />Bolag.
+                  </p>
+                </div>
+
+                {/* Badge */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.5 }} viewport={{ once: true }}
+                  className="absolute top-6 right-6 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-white/[0.08] shadow-xl px-5 py-3.5"
+                >
+                  <div className="text-2xl font-bold text-neutral-900 dark:text-white leading-none">&lt; 1 min</div>
+                  <div className="text-[10px] text-neutral-400 dark:text-white/40 mt-1 tracking-wide">Från missat samtal till bokat möte</div>
                 </motion.div>
               </motion.div>
 
+              {/* Right: 2×2 feature cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3 content-start">
+                {[
+                  { n: "01", icon: Building2, title: "Inte features. Bolag.", desc: "Vi äger och driver varje bolag — byggt bottom-up för en specifik marknad och kund." },
+                  { n: "02", icon: BarChart3, title: "Intäkter från dag ett.", desc: "MRR, inte vision. Vi bygger för lönsamhet — inte för nästa funding-runda." },
+                  { n: "03", icon: ArrowUpRight, title: "Vi kör. Ni fokuserar.", desc: "Vi driver bolagen operativt. Ni behöver inte lära er ett nytt system." },
+                  { n: "04", icon: Globe, title: "Byggt för er marknad.", desc: "Svenska arbetsflöden, rätt bransch, rätt kund. Inget översatt från engelska." },
+                ].map((f, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45, delay: i * 0.09 }} viewport={{ once: true }}
+                    whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                    className="group relative rounded-2xl border border-neutral-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] p-5 hover:border-orange-200 dark:hover:border-orange-500/20 hover:bg-orange-50/40 dark:hover:bg-orange-500/[0.03] transition-all duration-300 overflow-hidden"
+                  >
+                    {/* Background number */}
+                    <div className="absolute -bottom-3 -right-2 text-[4.5rem] font-black text-neutral-100 dark:text-white/[0.03] leading-none select-none pointer-events-none">
+                      {f.n}
+                    </div>
+                    <div className="relative">
+                      <div className="w-9 h-9 rounded-xl bg-orange-50 dark:bg-orange-500/10 flex items-center justify-center mb-3.5 text-orange-500 group-hover:bg-orange-100 dark:group-hover:bg-orange-500/20 transition-colors">
+                        <f.icon className="h-4 w-4" />
+                      </div>
+                      <div className="font-semibold text-sm text-neutral-800 dark:text-white/80 mb-1.5 leading-snug">{f.title}</div>
+                      <div className="text-xs text-neutral-400 dark:text-white/35 leading-relaxed">{f.desc}</div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
+
           </div>
         </section>
 
         {/* ── Section 03: Mission ── */}
         <section className="py-24 md:py-32 border-t border-neutral-100 dark:border-white/[0.04]">
           <div className="max-w-6xl mx-auto px-6">
-            <motion.div
-              initial="hidden" whileInView="visible"
-              viewport={{ once: true }} variants={fadeUp}
-              className="text-center max-w-3xl mx-auto"
-            >
-              <SectionLabel num="03" text="Mission" />
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-neutral-900 dark:text-white mb-8 leading-tight">
-                Bygg en bättre<br />
-                <span className="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
-                  arbetsdag
-                </span>
-              </h2>
-              <div className="space-y-4 text-neutral-500 dark:text-white/45 text-base md:text-lg leading-relaxed mb-12">
-                <p>Vårt uppdrag är att göra det mätbart enklare att driva företag i Sverige — genom att bygga AI-verktyg som faktiskt används, av människor som faktiskt har bråttom.</p>
-                <p>De bästa stunderna i arbetslivet är när du fokuserar på det du är bra på, slipper friktion, och ser ditt företag växa.</p>
-                <p>Vi vill skapa det varje gång någon använder ett av våra bolags produkter — helt anpassade för hur svenska företag faktiskt fungerar.</p>
-              </div>
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
-              {/* Image */}
+              {/* Left: editorial heading + text */}
               <motion.div
-                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }} viewport={{ once: true }}
-                className="relative overflow-hidden rounded-3xl"
+                initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7 }} viewport={{ once: true }}
               >
-                <img
-                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80"
-                  alt="Team collaboration"
-                  className="w-full h-72 object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-900/20 to-transparent mix-blend-multiply" />
+                <SectionLabel num="03" text="Mission" />
+                <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-neutral-900 dark:text-white mb-8 leading-[1.06]">
+                  Bygg en bättre<br />
+                  <span className="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
+                    arbetsdag.
+                  </span>
+                </h2>
+                <div className="space-y-4 text-neutral-500 dark:text-white/45 text-sm md:text-base leading-relaxed">
+                  <p>Noderum finns till för de som har bråttom. Hantverkaren som missar samtal. Säljaren som knappt hinner äta lunch. Egenföretagaren som jobbar sent för att hålla allt rullande.</p>
+                  <p>Vi bygger bolag som tar bort friktion. Konkret. Mätbart. Utan att ni behöver lära er ett nytt system.</p>
+                  <p>Det är inte AI för sakens skull. Det är verktyg som funkar — på svenska, i er vardag, från dag ett.</p>
+                </div>
               </motion.div>
-            </motion.div>
+
+              {/* Right: tilted typography block */}
+              <motion.div
+                initial={{ opacity: 0, x: 28 }} whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }} viewport={{ once: true }}
+                className="relative"
+              >
+                <motion.div
+                  initial={{ rotate: 2 }}
+                  whileHover={{ rotate: 0 }}
+                  transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="relative overflow-hidden rounded-3xl shadow-2xl shadow-neutral-200/80 dark:shadow-black/40"
+                >
+                  <div className="w-full h-[460px] bg-neutral-950 flex items-center justify-center px-10">
+                    <p
+                      className="text-orange-500 font-bold leading-tight text-center"
+                      style={{ fontSize: "clamp(2.25rem, 4.5vw, 3.75rem)", letterSpacing: "-0.03em" }}
+                    >
+                      Vi bygger för<br />ni som har<br />bråttom.
+                    </p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+            </div>
           </div>
         </section>
 
@@ -314,11 +320,11 @@ export function NoderumLanding() {
                   Våra bolag
                 </h2>
                 <p className="text-neutral-400 dark:text-white/40 max-w-md text-sm leading-relaxed">
-                  Operativa AI-bolag byggda bottom-up för en specifik marknad — inte top-down från en generell plattform.
+                  Tre bolag i pilotdrift. Varje bolag ägt och drivet av Noderum — byggt bottom-up för en specifik marknad och kund.
                 </p>
               </div>
               <span className="text-xs font-mono text-neutral-300 dark:text-white/20 border border-neutral-200 dark:border-white/[0.08] rounded-full px-3 py-1.5 tracking-widest">
-                3 aktiva bolag
+                3 bolag i pilot
               </span>
             </motion.div>
 
@@ -328,7 +334,7 @@ export function NoderumLanding() {
               className="grid gap-4 lg:grid-cols-3"
             >
 
-              {/* ── AI-Receptionist — col 1+2, row 1 ── */}
+              {/* ── Nira — col 1+2, row 1 ── */}
               <motion.div
                 variants={item}
                 className="lg:col-span-2 rounded-3xl border border-neutral-200 dark:border-white/[0.08] bg-white dark:bg-neutral-900/40 overflow-hidden flex flex-col"
@@ -342,9 +348,9 @@ export function NoderumLanding() {
                         </div>
                         <span className="text-[10px] font-mono text-neutral-400 dark:text-white/30 tracking-[0.18em] uppercase">Kundservice</span>
                       </div>
-                      <h3 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">AI-Receptionist</h3>
+                      <h3 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">Nira</h3>
                       <p className="text-neutral-500 dark:text-white/40 text-sm leading-relaxed mt-2 max-w-sm">
-                        Svarar, kvalificerar och bokar möten på svenska — dygnet runt, utan väntetid.
+                        Svarar, bokar och följer upp — utan att ni behöver lyfta ett finger.
                       </p>
                     </div>
                     <span className="flex items-center gap-1.5 text-[11px] font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 rounded-full px-3 py-1 flex-shrink-0">
@@ -379,7 +385,7 @@ export function NoderumLanding() {
                 <div>
                   <h3 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-1.5">WebsiteForge</h3>
                   <p className="text-neutral-500 dark:text-white/40 text-sm leading-relaxed">
-                    AI-genererade hemsidor för svenska hantverkare och SMB.
+                    Snygga, effektiva hemsidor för svenska SMB — klara på under en dag.
                   </p>
                 </div>
                 <div className="flex items-center justify-between pt-3 border-t border-neutral-100 dark:border-white/[0.05]">
@@ -406,7 +412,7 @@ export function NoderumLanding() {
                       </div>
                       <h3 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">Collabify</h3>
                       <p className="text-neutral-500 dark:text-white/40 text-sm leading-relaxed mt-2 max-w-sm">
-                        Creators betalar per spårat köp. Varumärken får mätbar ROI — inte gissningar.
+                        Performance influencer marketing. Ni betalar bara för resultat — inte gissningar.
                       </p>
                     </div>
                     <span className="flex items-center gap-1.5 text-[11px] font-medium text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-500/10 rounded-full px-3 py-1 flex-shrink-0">
@@ -426,7 +432,7 @@ export function NoderumLanding() {
                 className="rounded-3xl border border-dashed border-neutral-200 dark:border-white/[0.06] flex items-center justify-center gap-2.5 group cursor-default hover:border-neutral-300 dark:hover:border-white/[0.1] transition-colors duration-300 min-h-[120px]"
               >
                 <Sparkles className="h-3.5 w-3.5 text-neutral-300 dark:text-white/15 group-hover:text-orange-400/50 transition-colors" />
-                <span className="text-xs text-neutral-300 dark:text-white/20 group-hover:text-neutral-400 dark:group-hover:text-white/35 transition-colors">Fler bolag på väg</span>
+                <span className="text-xs text-neutral-300 dark:text-white/20 group-hover:text-neutral-400 dark:group-hover:text-white/35 transition-colors">Fler bolag i utveckling.</span>
               </motion.div>
 
             </motion.div>
@@ -447,38 +453,33 @@ export function NoderumLanding() {
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-6">
                   Bygg med oss.
                 </h2>
+                <p className="text-neutral-500 dark:text-white/45 text-sm md:text-base leading-relaxed mb-1 font-medium">
+                  Vi anställer aktivt. Säljare i prio.
+                </p>
                 <p className="text-neutral-500 dark:text-white/45 text-sm md:text-base leading-relaxed mb-4">
-                  Vi söker aktivt operatörer, ingenjörer och säljare som vill bygga riktiga företag — inte features.
+                  Ni som vill bygga bolag — inte jobba på ett. Ni som förstår att ett missat säljsamtal är förlorade intäkter.
                 </p>
                 <p className="text-neutral-400 dark:text-white/40 text-sm leading-relaxed">
                   Mejla{" "}
                   <Link href="mailto:careers@noderum.se" className="text-orange-500 hover:text-orange-600 transition-colors">
                     careers@noderum.se
                   </Link>{" "}
-                  med ditt CV eller portfolio, och en tankeväckande rad om varför.
-                </p>
-                <p className="text-neutral-300 dark:text-white/25 text-xs mt-4">
-                  Läs mer om hur vi tänker{" "}
-                  <Link href="#manifesto" className="underline underline-offset-4 hover:text-neutral-500 dark:hover:text-white/50 transition-colors">
-                    här
-                  </Link>.
+                  och berätta varför ni är rätt person för ett av våra bolag.
                 </p>
 
-                {/* Image */}
+                {/* Typography block */}
                 <motion.div
                   initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.2 }} viewport={{ once: true }}
                   className="mt-8 relative overflow-hidden rounded-2xl"
                 >
-                  <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80"
-                    alt="People working together"
-                    className="w-full h-52 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <div className="text-xs font-medium opacity-80">Noderum Studio</div>
-                    <div className="text-[10px] opacity-50">Stockholm, Sverige</div>
+                  <div className="w-full h-52 bg-neutral-950 flex items-center justify-center px-8">
+                    <p
+                      className="text-orange-500 font-bold leading-tight text-center"
+                      style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.75rem)", letterSpacing: "-0.03em" }}
+                    >
+                      Bygg ett bolag.<br />Inte en karriär.
+                    </p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -489,9 +490,9 @@ export function NoderumLanding() {
                 className="space-y-2"
               >
                 {[
-                  { role: "Operatörer", desc: "Du som kan ta ett bolag från 0 till marknad.", tag: "0→1" },
-                  { role: "Ingenjörer", desc: "Du som vill äga en produkt, inte bara koda.", tag: "Full-stack" },
-                  { role: "Säljare", desc: "Du som förstår att säljning är service.", tag: "B2B/B2C" },
+                  { role: "Säljare", desc: "Du förstår att ett missat samtal är en förlorad kund.", tag: "B2B/B2C" },
+                  { role: "Operatörer", desc: "Du tar ett bolag från 0 till marknad och trivs med det.", tag: "0→1" },
+                  { role: "Ingenjörer", desc: "Du äger produkten — inte bara kodar den.", tag: "Full-stack" },
                 ].map((r, i) => (
                   <motion.a
                     key={i}
@@ -534,26 +535,14 @@ export function NoderumLanding() {
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10">
 
             {/* 4 columns */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-14 gap-y-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-10 md:gap-x-14 gap-y-10">
 
               {/* Våra bolag */}
               <div>
                 <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-neutral-400 dark:text-white/30 mb-4">
                   Våra bolag
                 </p>
-                {["WebsiteForge", "AI-Receptionist", "Collabify"].map((l) => (
-                  <a key={l} href="#" className="block text-sm text-neutral-500 dark:text-white/40 hover:text-neutral-900 dark:hover:text-white transition-colors mb-2.5">
-                    {l}
-                  </a>
-                ))}
-              </div>
-
-              {/* Lösningar */}
-              <div>
-                <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-neutral-400 dark:text-white/30 mb-4">
-                  Lösningar
-                </p>
-                {["AI-integration", "Automatisering", "Rådgivning", "Prototyper"].map((l) => (
+                {["WebsiteForge", "Nira", "Collabify"].map((l) => (
                   <a key={l} href="#" className="block text-sm text-neutral-500 dark:text-white/40 hover:text-neutral-900 dark:hover:text-white transition-colors mb-2.5">
                     {l}
                   </a>
@@ -625,21 +614,13 @@ export function NoderumLanding() {
         </div>
 
         {/* Bottom bar */}
-        <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 border-t border-neutral-100 dark:border-white/[0.04] mt-4">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 mt-2">
           <p className="text-xs text-neutral-400 dark:text-white/25">
             © 2026 Noderum AB. Alla rättigheter förbehållna.
           </p>
           <div className="flex gap-5">
             <a href="#" className="text-xs text-neutral-400 dark:text-white/25 hover:text-neutral-700 dark:hover:text-white/60 transition-colors">Användarvillkor</a>
             <a href="#" className="text-xs text-neutral-400 dark:text-white/25 hover:text-neutral-700 dark:hover:text-white/60 transition-colors">Integritetspolicy</a>
-          </div>
-          <div className="flex items-center gap-2">
-            <motion.div
-              className="w-2 h-2 rounded-full bg-emerald-400"
-              animate={{ opacity: [1, 0.25, 1] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <span className="text-xs text-neutral-400 dark:text-white/25">Alla system fungerar</span>
           </div>
         </div>
 

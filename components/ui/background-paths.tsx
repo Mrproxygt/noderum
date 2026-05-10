@@ -49,9 +49,9 @@ function FloatingPaths({ position }: { position: number }) {
 }
 
 export function NoderumHero() {
-  const line1 = "Bygger"
-  const line2 = "framtidens"
-  const line3 = "AI-bolag."
+  const line1 = "Vi bygger"
+  const line2 = "AI-bolag."
+  const line3 = "Inte AI."
   const lines = [line1, line2, line3]
 
   return (
@@ -76,7 +76,7 @@ export function NoderumHero() {
             className="mb-12 flex justify-center"
           >
             <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-black/10 dark:border-white/10 bg-black/[0.04] dark:bg-white/[0.06] text-sm font-medium text-black/50 dark:text-white/50 tracking-wide">
-              ✦ Byggt för svenska företag
+              ✦ Operativa AI-bolag för svenska SMB
             </span>
           </motion.div>
 
@@ -109,9 +109,9 @@ export function NoderumHero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.9 }}
-            className="text-lg md:text-xl text-black/45 dark:text-white/45 font-light max-w-2xl mx-auto mb-14 leading-relaxed"
+            className="text-lg md:text-xl text-black/45 dark:text-white/45 font-light max-w-2xl mx-auto mb-8 sm:mb-14 leading-relaxed"
           >
-            Vi driver inte projekt. Vi bygger bolag — från första kodraden till första miljonen i återkommande intäkter.
+            Noderum grundar och driver AI-företag som löser konkreta problem för svenska SMB. Tre bolag i pilotdrift. Fler på väg.
           </motion.p>
 
           {/* Buttons */}
@@ -119,13 +119,13 @@ export function NoderumHero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.1 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 justify-center"
           >
-            <div className="inline-block group relative bg-gradient-to-b from-black/10 to-white/10 dark:from-white/10 dark:to-black/10 p-px rounded-2xl backdrop-blur-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="block w-full sm:inline-block sm:w-auto group relative bg-gradient-to-b from-black/10 to-white/10 dark:from-white/10 dark:to-black/10 p-px rounded-2xl backdrop-blur-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <Button
                 variant="ghost"
                 onClick={() => document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" })}
-                className="rounded-[1.15rem] px-10 py-7 text-lg font-semibold backdrop-blur-md bg-white/95 hover:bg-white/100 dark:bg-black/95 dark:hover:bg-black/100 text-black dark:text-white transition-all duration-300 group-hover:-translate-y-0.5 border border-black/10 dark:border-white/10 hover:shadow-md"
+                className="w-full sm:w-auto rounded-[1.15rem] px-8 py-5 sm:py-7 text-base sm:text-lg font-semibold backdrop-blur-md bg-white/95 hover:bg-white/100 dark:bg-black/95 dark:hover:bg-black/100 text-black dark:text-white transition-all duration-300 group-hover:-translate-y-0.5 border border-black/10 dark:border-white/10 hover:shadow-md"
               >
                 <span className="opacity-90 group-hover:opacity-100 transition-opacity">Hör av dig</span>
                 <span className="ml-3 opacity-60 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300">→</span>
@@ -134,7 +134,7 @@ export function NoderumHero() {
 
             <button
               onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-10 py-5 rounded-2xl text-lg font-semibold text-black/50 dark:text-white/50 hover:text-black dark:hover:text-white border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300"
+              className="w-full sm:w-auto px-8 py-4 sm:py-5 rounded-2xl text-base sm:text-lg font-semibold text-black/50 dark:text-white/50 hover:text-black dark:hover:text-white border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300"
             >
               Se våra bolag
             </button>
