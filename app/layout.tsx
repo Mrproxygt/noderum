@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Noderum — Vi bygger AI-bolag för Sverige",
-  description: "Noderum bygger operativa AI-bolag för svenska SMB. Tre bolag i pilotdrift: Nira, WebsiteForge, Collabify.",
+  description: "Noderum bygger operativa AI-bolag för svenska SMB. Tre bolag i pilotdrift: Menodi.se, WebsiteForge, och ett stealth-projekt inom performance-baserad influencer marketing.",
 };
 
 export default function RootLayout({

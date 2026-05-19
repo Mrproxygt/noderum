@@ -11,7 +11,6 @@ import {
 import { NoderumHero } from "@/components/ui/background-paths"
 import { LogoMarquee } from "@/components/ui/logo-marquee"
 import { LiveCall } from "@/components/ui/live-call"
-import { CollabifyDemo } from "@/components/ui/collabify-demo"
 import { ProblemOrbital } from "@/components/ui/problem-orbital"
 
 const fadeUp = {
@@ -334,7 +333,7 @@ export function NoderumLanding() {
               className="grid gap-4 lg:grid-cols-3"
             >
 
-              {/* ── Nira — col 1+2, row 1 ── */}
+              {/* ── Menodi.se — col 1+2, row 1 ── */}
               <motion.div
                 variants={item}
                 className="lg:col-span-2 rounded-3xl border border-neutral-200 dark:border-white/[0.08] bg-white dark:bg-neutral-900/40 overflow-hidden flex flex-col"
@@ -348,7 +347,7 @@ export function NoderumLanding() {
                         </div>
                         <span className="text-[10px] font-mono text-neutral-400 dark:text-white/30 tracking-[0.18em] uppercase">Kundservice</span>
                       </div>
-                      <h3 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">Nira</h3>
+                      <h3 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">Menodi.se</h3>
                       <p className="text-neutral-500 dark:text-white/40 text-sm leading-relaxed mt-2 max-w-sm">
                         Svarar, bokar och följer upp — utan att ni behöver lyfta ett finger.
                       </p>
@@ -396,7 +395,7 @@ export function NoderumLanding() {
                 </div>
               </motion.div>
 
-              {/* ── Collabify — col 1+2, row 2 ── */}
+              {/* ── Stealth — performance based influencer — col 1+2, row 2 ── */}
               <motion.div
                 variants={item}
                 className="lg:col-span-2 rounded-3xl border border-neutral-200 dark:border-white/[0.08] bg-white dark:bg-neutral-900/40 overflow-hidden flex flex-col"
@@ -410,19 +409,31 @@ export function NoderumLanding() {
                         </div>
                         <span className="text-[10px] font-mono text-neutral-400 dark:text-white/30 tracking-[0.18em] uppercase">Influencer Marketing</span>
                       </div>
-                      <h3 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">Collabify</h3>
+                      <h3 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">Stealth</h3>
                       <p className="text-neutral-500 dark:text-white/40 text-sm leading-relaxed mt-2 max-w-sm">
-                        Performance influencer marketing. Ni betalar bara för resultat — inte gissningar.
+                        Performance based influencer marketing. Mer info snart.
                       </p>
                     </div>
-                    <span className="flex items-center gap-1.5 text-[11px] font-medium text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-500/10 rounded-full px-3 py-1 flex-shrink-0">
-                      <span className="w-1.5 h-1.5 rounded-full bg-orange-500 inline-block" />
-                      Beta
+                    <span className="flex items-center gap-1.5 text-[11px] font-medium text-neutral-500 dark:text-white/50 bg-neutral-100 dark:bg-white/[0.06] rounded-full px-3 py-1 flex-shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 dark:bg-white/40 inline-block" />
+                      Stealth
                     </span>
                   </div>
                 </div>
-                <div className="flex-1 mx-8 mb-8 mt-2 rounded-2xl overflow-hidden">
-                  <CollabifyDemo />
+                <div className="flex-1 mx-8 mb-8 mt-2 rounded-2xl overflow-hidden relative min-h-[220px] bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-white/[0.03] dark:to-white/[0.01] border border-neutral-100 dark:border-white/[0.06] flex items-center justify-center">
+                  <div className="absolute inset-0 opacity-[0.07] dark:opacity-[0.05]" style={{
+                    backgroundImage: "radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)",
+                    backgroundSize: "20px 20px",
+                  }} />
+                  <div className="relative flex flex-col items-center gap-3 text-center px-6">
+                    <div className="flex items-center gap-1.5 text-[10px] font-mono text-neutral-400 dark:text-white/30 tracking-[0.2em] uppercase">
+                      <Sparkles className="h-3 w-3" />
+                      Confidential
+                    </div>
+                    <p className="text-sm text-neutral-500 dark:text-white/45 max-w-xs leading-relaxed">
+                      Bolag #3 är under uppbyggnad. Detaljer hålls medvetet stängda tills lansering.
+                    </p>
+                  </div>
                 </div>
               </motion.div>
 
@@ -542,7 +553,7 @@ export function NoderumLanding() {
                 <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-neutral-400 dark:text-white/30 mb-4">
                   Våra bolag
                 </p>
-                {["WebsiteForge", "Nira", "Collabify"].map((l) => (
+                {["WebsiteForge", "Menodi.se", "Stealth"].map((l) => (
                   <a key={l} href="#" className="block text-sm text-neutral-500 dark:text-white/40 hover:text-neutral-900 dark:hover:text-white transition-colors mb-2.5">
                     {l}
                   </a>
