@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { DemoCallProvider } from "@/components/demo-call/DemoCallProvider";
+import { DemoCallRoot } from "@/components/demo-call/DemoCallRoot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,12 @@ export default function RootLayout({
       lang="sv"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <DemoCallProvider>
+          {children}
+          <DemoCallRoot />
+        </DemoCallProvider>
+      </body>
     </html>
   );
 }

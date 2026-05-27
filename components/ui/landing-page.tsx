@@ -10,7 +10,7 @@ import {
 } from "lucide-react"
 import { NoderumHero } from "@/components/ui/background-paths"
 import { LogoMarquee } from "@/components/ui/logo-marquee"
-import { LiveCall } from "@/components/ui/live-call"
+import { DemoCallTrigger } from "@/components/demo-call/DemoCallTrigger"
 import { ProblemOrbital } from "@/components/ui/problem-orbital"
 
 const fadeUp = {
@@ -358,8 +358,8 @@ export function NoderumLanding() {
                     </span>
                   </div>
                 </div>
-                <div className="flex-1 mx-8 mb-8 mt-6 rounded-2xl bg-neutral-50 dark:bg-white/[0.03] border border-neutral-100 dark:border-white/[0.06] p-6">
-                  <LiveCall />
+                <div className="flex-1 mx-8 mb-8 mt-6 rounded-2xl overflow-hidden border border-white/[0.06]">
+                  <DemoCallTrigger />
                 </div>
               </motion.div>
 
