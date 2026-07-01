@@ -158,33 +158,8 @@
   }
 }
 
-/* ── Footer wordmark outline ── */
-.footer-wordmark {
-  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.10);
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-@media (prefers-color-scheme: dark) {
-  .footer-wordmark {
-    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.09);
-  }
-}
-
-/* ── Logo marquee: always visible in both modes ── */
-.marquee-logo {
-  filter: brightness(0);
-  opacity: 0.45;
-  transition: opacity 0.3s;
-}
-.marquee-logo:hover {
-  opacity: 0.75;
-}
-@media (prefers-color-scheme: dark) {
-  .marquee-logo {
-    filter: brightness(0) invert(1);
-    opacity: 0.4;
-  }
-  .marquee-logo:hover {
-    opacity: 0.7;
-  }
+/* ── Utils ── */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 120px;
 }
