@@ -7,13 +7,16 @@ export type DemoBranch = {
   dynamicVars: Record<string, string>
 }
 
+// Demo branches for Noderum.se — all powered by the same Menodi dynamic agent.
+// The agent discovers the caller's trade itself via conversation; dynamicVars
+// pre-seed the scenario so the demo shows industry-specific behavior instantly.
 export const DEMO_BRANCHES: DemoBranch[] = [
   {
     id: 'restaurang',
     label: 'Restaurang',
     icon: 'UtensilsCrossed',
-    agentName: 'Menodi – Restaurang',
-    subtitle: 'Kund ringer om bordsbyte…',
+    agentName: 'Noderum AI — Restaurang',
+    subtitle: 'Kund ringer om bordsbokning…',
     dynamicVars: {
       business_name: 'Restaurang Åkerblom',
       business_type: 'restaurang',
@@ -26,7 +29,7 @@ export const DEMO_BRANCHES: DemoBranch[] = [
     id: 'kundtjanst',
     label: 'Kundtjänst',
     icon: 'Headphones',
-    agentName: 'Menodi – Kundtjänst',
+    agentName: 'Noderum AI — Kundtjänst',
     subtitle: 'Kund ringer om retur…',
     dynamicVars: {
       business_name: 'Nordhem E-handel',
@@ -40,7 +43,7 @@ export const DEMO_BRANCHES: DemoBranch[] = [
     id: 'foretagare',
     label: 'Företagare',
     icon: 'Briefcase',
-    agentName: 'Menodi – Företagare',
+    agentName: 'Noderum AI — Företagare',
     subtitle: 'Kund ringer om offert…',
     dynamicVars: {
       business_name: 'Bergström Konsult AB',
@@ -54,7 +57,7 @@ export const DEMO_BRANCHES: DemoBranch[] = [
     id: 'hantverkare',
     label: 'Hantverkare',
     icon: 'Wrench',
-    agentName: 'Menodi – Hantverkare',
+    agentName: 'Noderum AI — Hantverkare',
     subtitle: 'Kund ringer om läckage…',
     dynamicVars: {
       business_name: 'Svensson VVS',
@@ -68,7 +71,7 @@ export const DEMO_BRANCHES: DemoBranch[] = [
     id: 'salong',
     label: 'Salong',
     icon: 'Scissors',
-    agentName: 'Menodi – Salong',
+    agentName: 'Noderum AI — Salong',
     subtitle: 'Kund ringer om klipptid…',
     dynamicVars: {
       business_name: 'Salong Viola',
@@ -80,10 +83,10 @@ export const DEMO_BRANCHES: DemoBranch[] = [
   },
   {
     id: 'sok',
-    label: 'Sök',
+    label: 'Fastighet',
     icon: 'Search',
-    agentName: 'Menodi – Sök',
-    subtitle: 'Kund söker rätt avdelning…',
+    agentName: 'Noderum AI — Fastighet',
+    subtitle: 'Hyresgäst felanmäler…',
     dynamicVars: {
       business_name: 'Fastighets AB Nordhus',
       business_type: 'fastighetsbolag',
