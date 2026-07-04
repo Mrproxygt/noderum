@@ -15,16 +15,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'ElevenLabs not configured' }, { status: 500 })
   }
 
-  const res = await fetch('https://api.elevenlabs.io/v1/convai/conversation/token', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'xi-api-key': apiKey,
-    },
-    body: JSON.stringify({
-      agent_id: agentId,
-      ...(Object.keys(dynamicVars).length > 0 && { dynamic_variables: dynamicVars }),
-    }),
+  const params = new URLSearchParams({ agent_id: agentId })
+  if (Object.keys(dynamicVars).length > 0) {
+    Object.entries(dynamicVars).forEach(([k, v]) => params.append(`dynamic_variables[${k}]`, v))
+  }
+  const res = await fetch(`https://api.elevenlabs.io/v1/convai/conversation/token?${params}`, {
+    method: 'GET',
+    headers: { 'xi-api-key': apiKey },
   })
 
   if (!res.ok) {
