@@ -1,9 +1,5 @@
 import { NextResponse } from 'next/server'
 
-export async function GET() {
-  return NextResponse.json({ status: 'ok', has_agent: !!process.env.ELEVENLABS_AGENT_ID, has_key: !!process.env.ELEVENLABS_API_KEY })
-}
-
 export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}))
   const dynamicVars: Record<string, string> = body.dynamicVars ?? {}
