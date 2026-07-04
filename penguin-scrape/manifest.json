@@ -1,0 +1,22 @@
+{
+  "baseUrl": "https://www.penguin-capital.co.jp",
+  "pages": [
+    "/en",
+    "/en/about/vision-way",
+    "/en/about/team",
+    "/en/about/company",
+    "/en/business/asset_management",
+    "/en/business/brokerage",
+    "/en/business/advisory",
+    "/en/knowledge",
+    "/en/news",
+    "/en/contact"
+  ],
+  "viewports": [
+    "desktop",
+    "tablet",
+    "mobile"
+  ],
+  "assetsDownloaded": 53,
+  "timestamp": "2026-07-02T10:26:14.948Z"
+}
