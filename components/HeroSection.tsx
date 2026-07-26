@@ -49,12 +49,12 @@ export default function HeroSection() {
             <p className="text-[9px] sm:text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-500 mb-2 sm:mb-3">
               Venture Studio — Grundat 2026
             </p>
-            <h1 className="text-[clamp(2.2rem,8vw,7rem)] font-semibold leading-[0.9] sm:leading-[0.88] text-gray-900 tracking-tight">
-              Vi grundar
+            <h1 className="text-[clamp(2.2rem,8vw,7rem)] font-semibold leading-[0.92] sm:leading-[0.9] text-gray-900 tracking-tight">
+              Vi bygger AI-bolag.
               <br />
-              AI-bolag.
+              Vi äger resultatet.
               <br />
-              Vi äger dem.
+              Inga mellanhänder.
             </h1>
           </div>
         </div>

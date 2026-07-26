@@ -1,3 +1,7 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = { title: "Integritetspolicy — Noderum", description: "Noderums integritetspolicy — hur vi samlar in och använder personuppgifter.", alternates: { canonical: "/integritetspolicy" } }
+
 export default function IntegritetspolicyPage() {
   return (
     <div className="bg-[#EFEFEF] min-h-screen pt-28 md:pt-36">

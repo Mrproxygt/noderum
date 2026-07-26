@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { ArrowUpRight } from "lucide-react"
+import { linkifyFirst } from "@/lib/seo"
 
-export const metadata: Metadata = { title: "Kontakt — Noderum", description: "Kontakta Noderum — investerare, talanger, kunder." }
+export const metadata: Metadata = { title: "Kontakt — Noderum", description: "Kontakta Noderum — investerare, talanger, kunder.", alternates: { canonical: "/kontakt" } }
 
 const contacts = [
   { title: "Investerare", desc: "Intresserad av att investera i nästa generations AI-bolag? Vi söker långsiktiga partners som delar vår syn på ägande och operation.", email: "youcef@noderum.se" },
@@ -23,7 +24,7 @@ export default function KontaktPage() {
           {contacts.map((c, i) => (
             <div key={i} className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col">
               <h3 className="text-[18px] sm:text-[20px] font-semibold text-gray-900 tracking-tight mb-3">{c.title}</h3>
-              <p className="text-[14px] text-gray-600 leading-relaxed mb-6 flex-1">{c.desc}</p>
+              <p className="text-[14px] text-gray-600 leading-relaxed mb-6 flex-1">{linkifyFirst(c.desc, "Menodi", "https://menodi.se")}</p>
               <a
                 href={`mailto:${c.email}`}
                 className="group inline-flex items-center gap-1 text-[14px] font-medium text-gray-900 hover:text-gray-500 transition-colors duration-300 mt-auto"

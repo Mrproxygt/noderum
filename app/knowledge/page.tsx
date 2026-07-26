@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { FilterPillsClient } from "./filter-pills-client"
 
-export const metadata: Metadata = { title: "Insikter — Noderum", description: "Tankar om AI, venture och svenska SMB." }
+export const metadata: Metadata = { title: "Insikter — Noderum", description: "Tankar om AI, venture och svenska SMB.", alternates: { canonical: "/knowledge" } }
 
 const articles = [
   { slug: "ai-receptionist-smb", date: "2026.06.10.", tag: "AI", title: "Varför varje hantverkare behöver en AI-receptionist 2026", excerpt: "Svenska SMB missar i snitt 30% av alla inkommande samtal. En AI-receptionist ändrar på det — och det handlar inte om att ersätta människor." },

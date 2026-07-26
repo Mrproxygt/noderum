@@ -17,12 +17,34 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.svg" },
   openGraph: { title: "Noderum — Vi bygger AI-bolag för Sverige", description: "En venture studio som grundar och driver operativa AI-företag för svenska SMB.", images: ["/og-image.svg"] },
   metadataBase: new URL("https://noderum.se"),
+  alternates: { canonical: "/" },
+}
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Noderum AB",
+  url: "https://noderum.se",
+  logo: "https://noderum.se/noderum-mark.svg",
+  description: "Noderum är en venture studio som grundar, äger och driver operativa AI-företag för svenska SMB.",
+  subOrganization: [
+    {
+      "@type": "Organization",
+      name: "Menodi",
+      url: "https://menodi.se",
+      description: "AI-receptionist för svenska SMB — svarar, bokar och följer upp dygnet runt, helt på svenska.",
+    },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="sv" className="h-full">
       <body className={`h-full ${inter.variable}`} style={{ fontFamily: "'Inter', var(--font-main)" }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <DemoCallProvider>
           <LayoutShell>{children}</LayoutShell>
           <DemoCallRoot />

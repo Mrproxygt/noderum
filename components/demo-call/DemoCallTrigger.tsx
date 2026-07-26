@@ -1,12 +1,9 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { Loader2, Play, PhoneOff, UtensilsCrossed, Headphones, Briefcase, Wrench, Scissors, Search } from 'lucide-react'
+import { Loader2, Play, PhoneOff } from 'lucide-react'
 import { useDemoCall } from './DemoCallProvider'
-import { DEMO_BRANCHES, type DemoBranch } from '@/lib/demoBranches'
 
-// Bar data reused from live-call.tsx — asymmetric, organic frames
 const BARS = [
   { id: 0, frames: [0.12, 0.74, 0.22, 0.88, 0.18, 0.60, 0.12], dur: 2.05 },
   { id: 1, frames: [0.45, 0.16, 0.93, 0.28, 0.76, 0.20, 0.45], dur: 1.72 },
@@ -18,39 +15,15 @@ const BARS = [
 ]
 const BAR_TIMES = [0, 0.166, 0.333, 0.5, 0.666, 0.833, 1]
 
-const BRANCH_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  UtensilsCrossed,
-  Headphones,
-  Briefcase,
-  Wrench,
-  Scissors,
-  Search,
-}
-
 export function DemoCallTrigger() {
-  const { openModal, startCall, endCall, isActive, connecting, expand, isOpen } = useDemoCall()
-  const [selectedBranch, setSelectedBranch] = useState<DemoBranch>(DEMO_BRANCHES[0])
-  const [subtitleIdx, setSubtitleIdx] = useState(0)
-  const subtitleRef = useRef(subtitleIdx)
-  subtitleRef.current = subtitleIdx
-
-  // Rotate subtitle when idle
-  useEffect(() => {
-    if (isActive) return
-    const id = setInterval(() => {
-      setSubtitleIdx((i) => (i + 1) % DEMO_BRANCHES.length)
-    }, 3200)
-    return () => clearInterval(id)
-  }, [isActive])
+  const { openModal, startCall, endCall, isActive, connecting, expand } = useDemoCall()
 
   const handlePlay = () => {
     if (isActive) {
-      // Call already active — re-open modal
       expand()
       return
     }
-    openModal({ agentName: selectedBranch.agentName, dynamicVars: selectedBranch.dynamicVars })
-    // Auto-start after modal opens
+    openModal({ agentName: 'Noderum AI' })
     setTimeout(() => startCall(), 200)
   }
 
@@ -58,10 +31,6 @@ export function DemoCallTrigger() {
     e.stopPropagation()
     void endCall()
   }
-
-  const displaySubtitle = isActive
-    ? `${selectedBranch.agentName} — i samtal`
-    : DEMO_BRANCHES[subtitleIdx].subtitle
 
   return (
     <div className="relative w-full h-full min-h-[220px] bg-gradient-to-br from-[#0e0620] via-[#130826] to-[#1c0f38] rounded-2xl flex flex-col items-center justify-center gap-5 px-6 py-8 overflow-hidden select-none">
@@ -80,16 +49,9 @@ export function DemoCallTrigger() {
         <p className="text-white font-bold text-lg sm:text-xl tracking-tight leading-snug">
           Tryck play — prata med vår AI-receptionist
         </p>
-        <motion.p
-          key={displaySubtitle}
-          initial={{ opacity: 0, y: 4 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -4 }}
-          transition={{ duration: 0.35 }}
-          className="text-[12px] text-white/45 tracking-wide"
-        >
-          {displaySubtitle}
-        </motion.p>
+        <p className="text-[12px] text-white/45 tracking-wide">
+          Ett kort samtal så får du höra hur det låter
+        </p>
       </div>
 
       {/* Glassmorphism pill */}
@@ -130,35 +92,6 @@ export function DemoCallTrigger() {
           )}
         </div>
       </button>
-
-      {/* Branch chips */}
-      <div className="relative w-full flex flex-wrap justify-center gap-2 max-w-xs">
-        {DEMO_BRANCHES.map((branch, i) => {
-          const Icon = BRANCH_ICONS[branch.icon]
-          const selected = selectedBranch.id === branch.id
-          return (
-            <motion.button
-              key={branch.id}
-              type="button"
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.05, duration: 0.3 }}
-              onClick={() => {
-                setSelectedBranch(branch)
-                setSubtitleIdx(i)
-              }}
-              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11.5px] font-medium border transition-all duration-200 ${
-                selected
-                  ? 'bg-white/15 border-white/50 text-white'
-                  : 'bg-transparent border-white/15 text-white/50 hover:border-white/30 hover:text-white/75'
-              }`}
-            >
-              {Icon && <Icon className="w-3 h-3" />}
-              {branch.label}
-            </motion.button>
-          )
-        })}
-      </div>
 
     </div>
   )
