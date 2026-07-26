@@ -40,7 +40,7 @@ export function ProjectCards() {
               <p className="text-[14px] sm:text-[15px] font-semibold text-gray-900">Menodi</p>
             </div>
             <p className="text-[13px] sm:text-[14px] text-gray-600 leading-relaxed mb-4 flex-1">
-              En AI-receptionist som svarar, bokar och följer upp — dygnet runt, helt på svenska.
+              En AI-receptionist som svarar, bokar och följer upp dygnet runt, helt på svenska.
               Byggd specifikt för svenska SMB: hantverkare, salonger, restauranger och konsulter.
               Pilotkunder rapporterar 40% färre missade samtal.
             </p>
@@ -85,7 +85,7 @@ export function ProjectCards() {
                 <p className="text-[14px] font-semibold text-white/90">Stealth</p>
               </div>
               <p className="text-[12px] sm:text-[13px] text-gray-400 leading-relaxed mb-4">
-                Vi betalar kreatörer för resultat — inte för exponering. Ny modell, ny marknad.
+                Vi betalar kreatörer efter resultat, inte efter hur mycket de syns.
               </p>
               <div className="flex-1 flex items-end">
                 <p className="text-[28px] sm:text-[36px] font-bold text-white/[0.04] leading-none select-none">
@@ -129,7 +129,7 @@ export function ProjectCards() {
                 <p className="text-[14px] font-semibold text-white/90">Revin</p>
               </div>
               <p className="text-[12px] sm:text-[13px] text-gray-400 leading-relaxed mb-4">
-                Få tillbaka pengar från Tullverket — automatiskt. Över 40% av svenska importörer betalar för mycket i tull. Revin hittar felen och driver återkravet.
+                Över 40% av svenska importörer betalar för mycket i tull. Revin hittar felen och driver återkravet från Tullverket automatiskt.
               </p>
               {/* Fun: fake refund counter */}
               <div className="flex-1 flex items-center gap-4 opacity-30 group-hover:opacity-60 transition-opacity duration-700">
@@ -179,7 +179,7 @@ export function ProjectCards() {
                 <p className="text-[14px] font-semibold text-white/90">Laglyft</p>
               </div>
               <p className="text-[12px] sm:text-[13px] text-gray-400 leading-relaxed mb-4">
-                Lagstiftade utbildningar på autopilot. Arbetsmiljö, brandskydd, GDPR — alltid uppdaterat.
+                Lagstiftade utbildningar på autopilot: arbetsmiljö, brandskydd och GDPR, alltid uppdaterat mot gällande krav.
               </p>
               {/* Fun: checklist progress */}
               <div className="flex-1 space-y-2 opacity-40 group-hover:opacity-70 transition-opacity duration-700">

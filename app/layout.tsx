@@ -32,7 +32,7 @@ const organizationJsonLd = {
       "@type": "Organization",
       name: "Menodi",
       url: "https://menodi.se",
-      description: "AI-receptionist för svenska SMB — svarar, bokar och följer upp dygnet runt, helt på svenska.",
+      description: "AI-receptionist för svenska SMB som svarar, bokar och följer upp dygnet runt, helt på svenska.",
     },
   ],
 }

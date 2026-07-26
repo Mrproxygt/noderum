@@ -40,7 +40,7 @@ export default function HeroSection() {
           {/* Left: tagline */}
           <div className="md:max-w-[340px]">
             <p className="text-[12px] sm:text-[13px] md:text-[14px] text-gray-600 leading-relaxed max-w-[260px] sm:max-w-none">
-              Vi grundar, äger och driver operativa AI-bolag för svenska SMB — från första raden kod till första kunden.
+              Vi grundar, äger och driver operativa AI-bolag för svenska SMB, från första raden kod till första betalande kund.
             </p>
           </div>
 

@@ -2,11 +2,11 @@ import type { Metadata } from "next"
 import { ArrowUpRight } from "lucide-react"
 import { linkifyFirst } from "@/lib/seo"
 
-export const metadata: Metadata = { title: "Kontakt", description: "Kontakta Noderum — investerare, talanger, kunder.", alternates: { canonical: "/kontakt" } }
+export const metadata: Metadata = { title: "Kontakt", description: "Kontakta Noderum: investerare, talanger och kunder.", alternates: { canonical: "/kontakt" } }
 
 const contacts = [
   { title: "Investerare", desc: "Intresserad av att investera i nästa generations AI-bolag? Vi söker långsiktiga partners som delar vår syn på ägande och operation.", email: "youcef@noderum.se" },
-  { title: "Talanger", desc: "Vill du bygga framtidens AI-bolag? Vi söker operatörer som vill äga sin vertikal — inte konsulter som vill fakturera timmar.", email: "careers@noderum.se" },
+  { title: "Talanger", desc: "Vill du bygga framtidens AI-bolag? Vi söker operatörer som vill äga sin vertikal, inte konsulter som vill fakturera timmar.", email: "careers@noderum.se" },
   { title: "Kunder & partners", desc: "Intresserad av vad vi bygger? Menodi, WebsiteForge, eller något vi borde bygga härnäst? Vi vill höra från dig.", email: "youcef@noderum.se" },
 ]
 
@@ -16,7 +16,7 @@ export default function KontaktPage() {
       <section className="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 pb-16">
         <p className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-500 mb-3">( Kontakt )</p>
         <h1 className="text-[clamp(2rem,5vw,4rem)] font-semibold text-gray-900 tracking-tight leading-[0.95] mb-4">Låt oss prata.</h1>
-        <p className="text-[15px] sm:text-[16px] text-gray-600 max-w-[680px] leading-relaxed">Investerare, operatörer, kunder — vi bygger framtidens AI-bolag tillsammans.</p>
+        <p className="text-[15px] sm:text-[16px] text-gray-600 max-w-[680px] leading-relaxed">Investerare, operatörer och kunder: vi bygger framtidens AI-bolag tillsammans.</p>
       </section>
 
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 pb-24">

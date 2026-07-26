@@ -47,7 +47,7 @@ export function DemoCallTrigger() {
       {/* Heading */}
       <div className="relative text-center space-y-1.5">
         <p className="text-white font-bold text-lg sm:text-xl tracking-tight leading-snug">
-          Tryck play — prata med vår AI-receptionist
+          Tryck på play för att prata med vår AI-receptionist
         </p>
         <p className="text-[12px] text-white/45 tracking-wide">
           Ett kort samtal så får du höra hur det låter

@@ -4,7 +4,7 @@ import { DemoCallTrigger } from "@/components/demo-call/DemoCallTrigger"
 
 export const metadata: Metadata = {
   title: "Bolag",
-  description: "Fyra AI-bolag ägda och drivna av Noderum — från idé till lönsamhet.",
+  description: "Fyra AI-bolag ägda och drivna av Noderum, från idé till lönsamhet.",
   alternates: { canonical: "/portfolio" },
 }
 
@@ -19,7 +19,7 @@ export default function PortfolioPage() {
           Fyra bolag. Ett uppdrag.
         </h1>
         <p className="text-[15px] sm:text-[16px] text-gray-600 max-w-[680px] leading-relaxed">
-          Varje bolag ägt, drivet och opererat av Noderum från idé till lönsamhet. Två i pilotdrift, två i stealth — alla byggda för svenska SMB.
+          Varje bolag ägt, drivet och opererat av Noderum från idé till lönsamhet: två i pilotdrift, två fortfarande i stealth, alla byggda för svenska SMB.
         </p>
       </section>
 
@@ -37,7 +37,7 @@ export default function PortfolioPage() {
           </div>
           <div className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col">
             <p className="text-[14px] text-gray-600 leading-relaxed mb-4">
-              Menodi är en AI-receptionist som svarar, bokar och följer upp — dygnet runt, helt på svenska.
+              Menodi är en AI-receptionist som svarar, bokar och följer upp dygnet runt, helt på svenska.
               Byggd specifikt för svenska SMB: hantverkare, salonger, restauranger och konsulter.
             </p>
             <ul className="space-y-3 mb-6 text-[14px] text-gray-600">
@@ -66,7 +66,7 @@ export default function PortfolioPage() {
 
         <p className="text-[13px] text-gray-500 leading-relaxed max-w-[680px]">
           Menodi använder ElevenLabs röstteknologi för naturlig, svensk konversation och integrerar
-          med Google Calendar för sömlös bokning. Testa själv — tryck play och prata med Alex,
+          med Google Calendar för sömlös bokning. Testa själv: tryck på play och prata med Alex,
           vår AI-receptionist för hantverkare.
         </p>
         <a
@@ -103,11 +103,11 @@ export default function PortfolioPage() {
             <div className="relative z-10">
               <p className="text-[14px] text-gray-400 leading-relaxed mb-4">
                 Ett nytt bolag inom performance-baserad influencer marketing. Vi kopplar ihop svenska
-                varumärken med rätt kreatörer — och betalar endast för faktiska resultat.
+                varumärken med rätt kreatörer och betalar bara för resultat som faktiskt syns i siffrorna.
               </p>
               <p className="text-[14px] text-gray-400 leading-relaxed mb-6">
-                Traditionell influencer marketing betalar för exponering. Vi betalar för resultat.
-                En ny modell för en ny marknad — byggd från grunden för det svenska ekosystemet.
+                Traditionell influencer marketing betalar för exponering, vi betalar för resultat:
+                en modell byggd från grunden för den svenska marknaden.
               </p>
               <div className="flex items-center justify-between">
                 <span className="text-[12px] text-gray-500">Under utveckling — Q4 2026</span>
@@ -165,13 +165,13 @@ export default function PortfolioPage() {
               </div>
               <p className="text-[14px] text-gray-400 leading-relaxed mb-4">
                 Revin automatiserar tullåtervinning för svenska importörer. Under 2026 återkrävde
-                svenska företag 1,4 miljarder kronor i tull — men de allra flesta gör det manuellt,
-                via konsulter, eller inte alls. Revin gör det automatiskt.
+                svenska företag 1,4 miljarder kronor i tull, men de allra flesta gör det fortfarande
+                manuellt, via konsulter eller inte alls.
               </p>
               <p className="text-[14px] text-gray-400 leading-relaxed mb-6">
-                Vår AI scanner tulldeklarationer, identifierar felklassificerade varukoder och
-                missade undantag, och driver hela återkravsprocessen — från ansökan till utbetalning
-                från Tullverket. Ingen konsult, inga timarvoden, ingen administration. Bara pengar
+                Vår AI läser tulldeklarationer, hittar felklassificerade varukoder och missade
+                undantag, och driver hela återkravsprocessen från ansökan till utbetalning från
+                Tullverket. Utan konsultarvoden och utan pappersarbete för kunden. Bara pengar
                 tillbaka.
               </p>
               <div className="flex items-center gap-3">
@@ -243,15 +243,15 @@ export default function PortfolioPage() {
                 </div>
               </div>
               <p className="text-[14px] text-gray-400 leading-relaxed mb-4">
-                En digital plattform som automatiserar lagstiftade utbildningar för svenska arbetsgivare.
-                Arbetsmiljö, brandskydd, GDPR, HLR — allt samlat på ett ställe, alltid uppdaterat mot
+                En digital plattform som automatiserar lagstiftade utbildningar för svenska arbetsgivare:
+                arbetsmiljö, brandskydd, GDPR och HLR, samlat på ett ställe och alltid uppdaterat mot
                 gällande lagkrav.
               </p>
               <p className="text-[14px] text-gray-400 leading-relaxed mb-6">
-                Svenska företag lägger miljarder på obligatoriska personalutbildningar varje år — ofta
-                med papperslistor, engångsintyg och noll överblick. Laglyft digitaliserar hela kedjan:
-                från behovsanalys och schemaläggning till digitala intyg och myndighetsklara
-                revisorsunderlag.
+                Svenska företag lägger miljarder på obligatoriska personalutbildningar varje år, ofta
+                med papperslistor, engångsintyg och noll överblick. Laglyft digitaliserar hela kedjan,
+                från behovsanalys och schemaläggning till digitala intyg och revisorsunderlag som håller
+                för en myndighetsgranskning.
               </p>
               <div className="flex items-center gap-3">
                 <span className="text-[12px] text-gray-500">Under utveckling — Q2 2027</span>

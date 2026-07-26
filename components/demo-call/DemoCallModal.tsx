@@ -37,7 +37,7 @@ export function DemoCallModal() {
           {/* Header */}
           <div className="flex items-start justify-between gap-3 -mt-1">
             <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
-              Testsamtal — {agentName}
+              Testsamtal med {agentName}
             </h3>
             <div className="flex items-center gap-1 shrink-0">
               {isActive && (
@@ -105,7 +105,7 @@ export function DemoCallModal() {
           <div className="rounded-2xl border border-neutral-100 dark:border-white/[0.06] bg-neutral-50 dark:bg-white/[0.03] p-4">
             <p className="text-[13px] text-neutral-600 dark:text-white/60 text-center leading-relaxed">
               {isActive
-                ? 'Samtalet är öppet i en ny flik — prata fritt. Stäng fliken när du är klar.'
+                ? 'Samtalet är öppet i en ny flik. Prata fritt, och stäng fliken när du är klar.'
                 : 'Välj att prata i webbläsaren eller bli uppringd på mobilen.'
               }
             </p>
@@ -114,7 +114,7 @@ export function DemoCallModal() {
           {/* Ringback success */}
           {ringbackDone && (
             <div className="rounded-xl border border-emerald-200 bg-emerald-50 dark:bg-emerald-950/30 dark:border-emerald-800 px-4 py-3 text-[13px] text-emerald-800 dark:text-emerald-200 text-center">
-              Vi ringer dig nu — svara i telefonen.
+              Vi ringer dig nu, svara i telefonen.
             </div>
           )}
 

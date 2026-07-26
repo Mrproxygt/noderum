@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-export const metadata: Metadata = { title: "Integritetspolicy", description: "Noderums integritetspolicy — hur vi samlar in och använder personuppgifter.", alternates: { canonical: "/integritetspolicy" } }
+export const metadata: Metadata = { title: "Integritetspolicy", description: "Så samlar Noderum in och använder personuppgifter.", alternates: { canonical: "/integritetspolicy" } }
 
 export default function IntegritetspolicyPage() {
   return (
