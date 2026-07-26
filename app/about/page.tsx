@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-export const metadata: Metadata = { title: "Studio — Noderum", description: "Vision, team och bolag — Noderum grundar och driver AI-bolag.", alternates: { canonical: "/about" } }
+export const metadata: Metadata = { title: "Studio", description: "Vision, team och bolag — Noderum grundar och driver AI-bolag.", alternates: { canonical: "/about" } }
 
 const sections = [
   { id: "vision", num: "01", label: "Vision & Väg", title: "Vårt DNA", lead: "Ta djärva språng. Övervinn varje utmaning.", body: "Noderum föddes ur en enkel insikt: de bästa AI-bolagen byggs inte av konsulter — de byggs av operatörer som äger resultatet. Vi grundar, finansierar och driver AI-företag för svenska SMB. Inga mellanhänder, inga konsulter. Bara operativa bolag som löser verkliga problem." },

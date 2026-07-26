@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: "Noderum är en venture studio som grundar och driver operativa AI-företag för svenska SMB. Tre bolag i pilotdrift.",
   icons: { icon: "/favicon.svg" },
   openGraph: { title: "Noderum — Vi bygger AI-bolag för Sverige", description: "En venture studio som grundar och driver operativa AI-företag för svenska SMB.", images: ["/og-image.svg"] },
-  metadataBase: new URL("https://noderum.se"),
+  metadataBase: new URL("https://www.noderum.se"),
   alternates: { canonical: "/" },
 }
 
@@ -24,8 +24,8 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Noderum AB",
-  url: "https://noderum.se",
-  logo: "https://noderum.se/noderum-mark.svg",
+  url: "https://www.noderum.se",
+  logo: "https://www.noderum.se/noderum-mark.svg",
   description: "Noderum är en venture studio som grundar, äger och driver operativa AI-företag för svenska SMB.",
   subOrganization: [
     {

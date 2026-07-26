@@ -21,8 +21,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const a = ARTICLES[slug]
-  if (!a) return { title: "Not found — Noderum" }
-  return { title: `${a.title} — Noderum`, description: a.body[0], alternates: { canonical: `/knowledge/${slug}` } }
+  if (!a) return { title: "Not found" }
+  return { title: a.title, description: a.body[0], alternates: { canonical: `/knowledge/${slug}` } }
 }
 export default async function KnowledgeArticle({ params }: Props) {
   const { slug } = await params
@@ -35,8 +35,8 @@ export default async function KnowledgeArticle({ params }: Props) {
     headline: a.title,
     datePublished: toIsoDate(a.date),
     author: { "@type": "Organization", name: "Noderum" },
-    publisher: { "@type": "Organization", name: "Noderum", url: "https://noderum.se" },
-    mainEntityOfPage: `https://noderum.se/knowledge/${slug}`,
+    publisher: { "@type": "Organization", name: "Noderum", url: "https://www.noderum.se" },
+    mainEntityOfPage: `https://www.noderum.se/knowledge/${slug}`,
   }
 
   return (

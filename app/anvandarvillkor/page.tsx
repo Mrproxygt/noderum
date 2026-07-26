@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-export const metadata: Metadata = { title: "Användarvillkor — Noderum", description: "Noderums användarvillkor för webbplatsen noderum.se.", alternates: { canonical: "/anvandarvillkor" } }
+export const metadata: Metadata = { title: "Användarvillkor", description: "Noderums användarvillkor för webbplatsen noderum.se.", alternates: { canonical: "/anvandarvillkor" } }
 
 export default function AnvandarvillkorPage() {
   return (

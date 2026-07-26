@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 import { ARTICLES } from "./knowledge/[slug]/page"
 import { NEWS } from "./news/[slug]/page"
 
-const BASE = "https://noderum.se"
+const BASE = "https://www.noderum.se"
 const STATIC_ROUTES = ["", "/portfolio", "/about", "/knowledge", "/news", "/kontakt", "/integritetspolicy", "/anvandarvillkor"]
 
 export default function sitemap(): MetadataRoute.Sitemap {

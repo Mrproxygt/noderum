@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 
-export const metadata: Metadata = { title: "Nyheter — Noderum", description: "Senaste nyheterna från Noderum.", alternates: { canonical: "/news" } }
+export const metadata: Metadata = { title: "Nyheter", description: "Senaste nyheterna från Noderum.", alternates: { canonical: "/news" } }
 
 const items = [
   { slug: "menodi-lansering", date: "2026.06.01", title: "Noderum lanserar Menodi — AI-receptionist för svenska SMB" },

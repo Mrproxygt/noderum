@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react"
 import { DemoCallTrigger } from "@/components/demo-call/DemoCallTrigger"
 
 export const metadata: Metadata = {
-  title: "Bolag — Noderum",
+  title: "Bolag",
   description: "Fyra AI-bolag ägda och drivna av Noderum — från idé till lönsamhet.",
   alternates: { canonical: "/portfolio" },
 }

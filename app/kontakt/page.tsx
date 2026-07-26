@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ArrowUpRight } from "lucide-react"
 import { linkifyFirst } from "@/lib/seo"
 
-export const metadata: Metadata = { title: "Kontakt — Noderum", description: "Kontakta Noderum — investerare, talanger, kunder.", alternates: { canonical: "/kontakt" } }
+export const metadata: Metadata = { title: "Kontakt", description: "Kontakta Noderum — investerare, talanger, kunder.", alternates: { canonical: "/kontakt" } }
 
 const contacts = [
   { title: "Investerare", desc: "Intresserad av att investera i nästa generations AI-bolag? Vi söker långsiktiga partners som delar vår syn på ägande och operation.", email: "youcef@noderum.se" },
